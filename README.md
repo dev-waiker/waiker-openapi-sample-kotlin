@@ -33,6 +33,8 @@ HTTP Header로 인증정보를 전달하며 필요한 인증 정보는 아래와
 ```kotlin
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
+import org.springframework.http.HttpHeaders
+import org.springframework.web.client.RestTemplate
 
 class OpenApiSample {
     fun main(args: Array<String>) {
@@ -45,7 +47,21 @@ class OpenApiSample {
             .withClaim("userKey", accessKey)
             .sign(algorithm)
 
-        println("Bearer $jwtToken")
+        val template = RestTemplate()
+        val headers = HttpHeaders()
+        headers.set("Waiker-Product-Key", "발급받은 웨이커 프로덕트 키")
+        headers.set("Authorization", "Bearer ${jwtToken}")
+
+        runCatching {
+            template.getForObject(
+                "https://oapi.waiker.ai/v2/center/ai-news",
+                Map::class.java
+            )
+        }.onFailure {
+            println(it.message)
+        }.onSuccess {
+            // TODO
+        }
     }
 }
 ```
