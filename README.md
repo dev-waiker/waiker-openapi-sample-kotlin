@@ -18,7 +18,7 @@ HTTP Header로 인증정보를 전달하며 필요한 인증 정보는 아래와
 | Header | value |
 |-------------|-------------|
 |Waiker-Product-Key|웨이커에서 발행되는 프로덕트 키|
-|Authorization|웨이커에서 발행되는 프로덕트 키와 시크릿 키를 이용하여 생성한 JWT|
+|Authorization|Bearer {웨이커에서 발행되는 유저키와 시크릿 키를 이용하여 생성한 JWT}|
 
 ## JWT 생성 방법
 웨이커에서 발행되는 **User Key**를 **Secret Key**로 서명한 JWT입니다.
