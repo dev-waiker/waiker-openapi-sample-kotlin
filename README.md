@@ -1,11 +1,17 @@
-# Waiker-openapi-sample-kotlin
+# Waiker Open API (Kotlin) Samples
+
+웨이커 오픈 API를 kotlin 환경에서 사용하기 위한 샘플코드 레포지토리입니다.
+**오픈 API들의 Request, Response 모델들은 [웨이커 API 문서](https://docs.waiker.ai/) 를 확인해주세요**
 
 ## REST API 요청 포맷
 모든 웨이커 API 는 https를 통해 요청됩니다.
 API를 요청하기 위해서는 인증 정보를 Header에 담아 같이 요청해야 합니다.
 
 ## 인증 정보 생성을 위한 사전 작업
-인증 정보를 생성하기위해 사전에 웨이커 대시보드에서 생성한 
+
+[문서보기](https://docs.waiker.ai/v2.0.0/docs/%EC%9D%B8%EC%A6%9D%ED%82%A4-%EC%9A%94%EC%B2%AD%ED%95%98%EA%B8%B0)
+
+인증 정보를 생성하기위해 사전에 [Waiker Dashboard](https://dashboard.waiker.ai/key-management)에서 생성한 
 - **Product Key**
 - **UserKey**
 - **SecretKey**
