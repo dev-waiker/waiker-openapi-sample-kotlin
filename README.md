@@ -1,6 +1,7 @@
 # Waiker Open API (Kotlin) Samples
 
 웨이커 오픈 API를 kotlin 환경에서 사용하기 위한 샘플코드 레포지토리입니다.
+
 **오픈 API들의 Request, Response 모델들은 [웨이커 API 문서](https://docs.waiker.ai/) 를 확인해주세요**
 
 ## REST API 요청 포맷
