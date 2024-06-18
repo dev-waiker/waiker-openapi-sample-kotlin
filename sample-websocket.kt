@@ -1,4 +1,5 @@
-class ClientWebSocketStompConfig {
+class SampleWebSocketClientConfig {
+    
     fun webSocketStompClient(
         websocketStompClient: WebSocketStompClient,
         stompSessionHandler: StompSessionHandler
@@ -13,7 +14,7 @@ class ClientWebSocketStompConfig {
     }
 }
 
-class ClientWebSocketStompSessionHandler : StompSessionHandlerAdapter() {
+class SampleStompSessionHandler : StompSessionHandlerAdapter() {
     override fun afterConnected(session: StompSession, connectedHeaders: StompHeaders) {
         val headers = StompHeaders()
         headers.add("Waiker-Product-Key", "발급받은 웨이커 프로덕트 키");
