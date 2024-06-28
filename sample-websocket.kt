@@ -1,6 +1,9 @@
+package com.example.demo.client
+
 import org.springframework.messaging.converter.MappingJackson2MessageConverter
 import org.springframework.messaging.simp.stomp.*
 import org.springframework.stereotype.Component
+import org.springframework.web.socket.WebSocketHttpHeaders
 import org.springframework.web.socket.client.standard.StandardWebSocketClient
 import org.springframework.web.socket.messaging.WebSocketStompClient
 import java.lang.reflect.Type
@@ -16,8 +19,8 @@ class StompClient {
         stompClient.messageConverter = MappingJackson2MessageConverter()
     }
 
-    fun connect(url: String, sessionHandler: StompSessionHandler): StompSession {
-        val connectFuture = stompClient.connect(url, sessionHandler)
+    fun connect(url: String, headers: WebSocketHttpHeaders, sessionHandler: StompSessionHandler): StompSession {
+        val connectFuture = stompClient.connect(url, headers, sessionHandler)
         return connectFuture.get()
     }
 
